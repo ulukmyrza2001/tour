@@ -1,0 +1,257 @@
+@use "sass:math";
+
+.tour {
+  display: flex;
+  border-top: 1px solid rgb(0, 0, 0, 0.2);
+  flex-direction: column;
+  padding: 20px 0px;
+  gap: 25px;
+
+  &:last-child {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  }
+
+  &_show {}
+
+  @media (min-width: 767.98px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 25px 0px;
+  }
+
+  @media (min-width: 1875px) {
+    padding: 35px 0px;
+    gap: 15px;
+  }
+
+  &__button {
+    line-height: math.div(28, 26);
+    letter-spacing: -0.035em;
+    text-align: start;
+    flex: 0 1 20%;
+    font-size: 16px;
+
+    &::before {
+      font-size: 11px;
+    }
+
+    @media (max-width: 767.98px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+
+      .tour_show &::before {
+        transform: rotate(-180deg);
+      }
+    }
+
+    @media (min-width: 374.98px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 767.98px) {
+      font-size: 16px;
+      flex: 0 0 200px;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @media (min-width: 991.98px) {
+      flex: 0 1 220px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 26px;
+      flex: 0 0 420px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (max-width: 767.98px) {
+      display: none;
+
+      .tour_show & {
+        @media (max-width: 767.98px) {
+          display: flex;
+        }
+      }
+    }
+
+    @media (min-width: 767.98px) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    @media (min-width: 1875px) {
+      gap: 20px;
+    }
+  }
+
+  &__meta {
+    @media (max-width: 767.98px) {
+      position: relative;
+    }
+  }
+
+  &__rate {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    @media (max-width: 767.98px) {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      background-color: #F7F7F7;
+      padding: 10px 15px;
+    }
+  }
+
+  &__icon {
+    background-color: #000;
+    opacity: 0.2;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    flex: 0 0 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 33px;
+
+    @media (min-width: 767.98px) {
+      width: auto;
+      flex: 0 0 30px;
+      height: 30px;
+      font-size: 30px;
+    }
+
+    @media (min-width: 1280px) {
+      flex: 0 0 35px;
+      height: 35px;
+      font-size: 40px;
+    }
+
+    &_rated {
+      opacity: 1;
+    }
+  }
+
+  &__map {
+
+    @media (max-width: 767.98px) {
+      padding-bottom: 60%;
+    }
+
+    @media (max-width: 375px) {
+      padding-bottom: 90%;
+    }
+
+    @media (min-width: 767.98px) {
+      position: absolute;
+      top: 50%;
+      transform: translate(0px, -50%) scale(0);
+      transition: transform 0.5s ease 0s;
+      left: 100%;
+      z-index: 2;
+      min-width: 190px;
+      min-height: 225px;
+      pointer-events: none;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__title {
+    a {
+      line-height: math.div(28, 26);
+      letter-spacing: -0.035em;
+      position: relative;
+      font-size: 14px;
+      color: #000;
+
+      @media (min-width: 767.98px) {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      @media (min-width: 1875px) {
+        font-size: 26px;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          .tour__map {
+            transform: translate(0px, -50%) scale(1);
+            pointer-events: all;
+          }
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__price {
+    line-height: math.div(26, 28);
+    letter-spacing: -0.075em;
+    white-space: nowrap;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 26px;
+    }
+  }
+
+  &__footer {
+    @media (max-width: 767.98px) {
+      display: block;
+      padding: 18px 16px;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      line-height: math.div(18, 16);
+    }
+  }
+}

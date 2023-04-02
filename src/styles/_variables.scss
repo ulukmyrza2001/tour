@@ -1,0 +1,22 @@
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1875;
+$maxWidthContainerMin: 1250;
+$containerPadding: 48;
+$containerPaddingSmall: 32;
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+$mainColor: #000;
+$white: #fff;
+$gray: #999999;
+$yellow: #F3D100;
+
+$fontFamily: "VelaSans";
+$fontSize: 16px;
+
+$minWidth: 320px;

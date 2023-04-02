@@ -1,0 +1,178 @@
+@use "sass:math";
+
+.description {
+  position: relative;
+  padding: 20px 0;
+
+  @media (min-width: 991.98px) {
+    padding: 50px 0px;
+  }
+
+  @media (min-width: 1875px) {
+    padding: 80px 0px;
+  }
+
+  &__container {
+    min-height: 100vh;
+    display: grid;
+    grid-auto-flow: row;
+    position: relative;
+    z-index: 2;
+    grid-template-rows: 1fr auto;
+
+    @media (min-width: 767.98px) {
+      grid-template-rows: auto 1fr auto;
+    }
+  }
+
+  &__adventages {
+    display: none;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 767.98px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: 15px;
+      column-gap: 20px;
+    }
+
+    @media (min-width: 1280px) {
+      row-gap: 25px;
+      column-gap: 22px;
+    }
+
+    @media (min-width: 1875px) {
+      row-gap: 45px;
+      column-gap: 30px;
+    }
+  }
+
+  &__adventage {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    color: #fff;
+
+    &::before {
+      flex: 0 0 35px;
+      height: 35px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+      font-size: 45px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    @media (min-width: 1875px) {
+      column-gap: 17px;
+    }
+  }
+
+  &__name {}
+
+  &__info {
+    color: #fff;
+    height: 100%;
+    display: grid;
+    // grid-auto-flow: 1fr auto;
+    // align-content: space-between;
+    justify-items: center;
+  }
+
+
+  &__title {
+    align-self: flex-end;
+    line-height: math.div(73, 80);
+    text-align: center;
+    letter-spacing: -0.035em;
+    font-size: 26px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -18px;
+      transform: rotate(10deg);
+      display: block;
+      left: -8px;
+
+      @media (min-width: 374.98px) {
+        left: 10px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 374.98px) {
+      font-size: 34px;
+    }
+
+    @media (min-width: 767.98px) {
+      &::before {
+        display: none;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 60px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    max-width: 685px;
+    margin: 0 auto;
+    line-height: math.div(28, 26);
+    color: #fff;
+
+    @media (max-width: 479.98px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 374.98px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 767.98px) {
+      align-self: flex-end;
+    }
+
+    @media (min-width: 1280px) {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__coord {
+    text-align: center;
+    max-width: 685px;
+    line-height: math.div(28, 26);
+    margin: 0 auto;
+    color: #fff;
+
+    @media (max-width: 479.98px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 1280px) {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__image {}
+}

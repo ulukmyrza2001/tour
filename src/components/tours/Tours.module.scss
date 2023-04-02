@@ -1,0 +1,145 @@
+@use "sass:math";
+
+.tours {
+  padding-bottom: 20px;
+
+  @media (min-width: 767.98px) {
+    padding-bottom: 50px;
+  }
+
+  &__container {
+    @media (max-width: 1875px) {
+      max-width: 100%;
+      padding: 0 !important;
+    }
+  }
+
+  &__body {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 991.98px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1279.98px) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 25px;
+    }
+  }
+
+  &__tour {
+    @media (max-width: 1279.98px) {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &__scope {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .tours__image {
+          transform: scale(1.05);
+        }
+
+        .tours__link {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    color: #fff;
+  }
+
+  &__title {
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: math.div(56, 52);
+    text-align: center;
+    letter-spacing: -0.035em;
+    font-size: 30px;
+
+    &::first-letter {
+      font-family: 'DRUZHOK';
+    }
+
+    @media (max-width: 374.98px) {
+      padding: 0px 10px;
+    }
+
+    @media (min-width: 375px) {
+      font-size: 36px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 52px;
+    }
+  }
+
+  &__link {
+    background-color: #000;
+    line-height: math.div(26, 24);
+    text-align: center;
+    letter-spacing: -0.035em;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+    font-size: 16px;
+    padding: 16px 30px;
+
+    @media (min-width: 1875px) {
+      padding: 26px 22px;
+      font-size: 24px;
+    }
+
+    // @media (any-hover: hover) {
+    //   &:hover {
+    //     background-color: #fff;
+    //     color: #000;
+    //   }
+    // }
+  }
+
+  &__image {
+    overflow: hidden;
+    transition: transform 1.2s ease 0s;
+    padding-bottom: 90%;
+
+
+    @media (min-width: 479.98px) {
+      padding-bottom: 59%;
+    }
+
+    @media (min-width: 1280px) {
+      padding-bottom: 100%;
+    }
+
+    @media (min-width: 1875px) {
+      transition: transform 0.8s ease 0s;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

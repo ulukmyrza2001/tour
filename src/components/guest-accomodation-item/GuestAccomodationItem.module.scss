@@ -1,0 +1,249 @@
+@use "sass:math";
+
+.guest {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  row-gap: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+  &:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @media (min-width: 767.98px) {
+    row-gap: 15px;
+    padding: 20px 0px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 25px 0px;
+  }
+
+  @media (min-width: 1875px) {
+    padding: 35px 0px;
+  }
+
+  &_show {}
+
+  &__actions {
+    position: relative;
+    flex: 1 1 auto;
+
+    @media (min-width: 767.98px) {
+      flex: 0 1 190px;
+    }
+
+    @media (min-width: 1280px) {
+      flex: 0 1 345px;
+    }
+
+    @media (min-width: 1875px) {
+      flex: 0 1 445px;
+    }
+  }
+
+  &__button {
+    line-height: math.div(28, 26);
+    letter-spacing: -0.035em;
+    position: relative;
+    text-align: start;
+    z-index: 2;
+    font-size: 16px;
+
+    .guest_show & {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      padding: 20px 0px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      &::before {
+        font-size: 11px;
+
+      }
+    }
+
+    @media (min-width: 374.98px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 767.98px) {
+      font-size: 16px;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 26px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+
+        +.guest__image {
+          transform: scale(1) translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &__image {
+    @media (max-width: 475.98px) {
+      position: relative;
+      padding-bottom: 95%;
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (min-width: 767.98px) {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 70%;
+      min-width: 190px;
+      min-height: 220px;
+      transition: transform 0.3s ease 0s;
+      transform: scale(0) translateY(-50%);
+
+      img {
+        object-fit: cover;
+        min-width: 190px;
+        min-height: 220px;
+      }
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    display: none;
+
+    @media (max-width: 767.98px) {
+      .guest_show & {
+        display: block;
+      }
+    }
+
+    @media (min-width: 767.98px) {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @media (max-width: 767.98px) {
+      column-gap: 10px;
+      row-gap: 12px;
+      padding-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 767.98px) {
+      justify-content: flex-end;
+      align-items: center;
+      row-gap: 12px;
+      column-gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 1280px) {
+      column-gap: 15px;
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+
+    @media (max-width: 767.98px) {
+      gap: 10px;
+    }
+
+    @media (min-width: 767.98px) {
+      column-gap: 10px;
+    }
+
+    @media (min-width: 1280px) {
+      column-gap: 12px;
+    }
+
+    @media (min-width: 1875px) {
+      column-gap: 20px;
+    }
+  }
+
+  &__icon {
+    background-color: #F1F1F1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    color: #000;
+
+    flex: 0 0 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 26px;
+
+    @media (min-width: 767.98px) {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      font-size: 26px;
+    }
+
+    @media (min-width: 1280px) {
+      flex: 0 0 23px;
+      width: 23px;
+      height: 23px;
+      font-size: 31px;
+    }
+
+    @media (min-width: 1875px) {
+      flex: 0 0 35px;
+      width: 35px;
+      height: 35px;
+      font-size: 45px;
+    }
+
+    &_available {
+      transform: rotate(-45deg);
+      color: #fff;
+      background-color: #F30202;
+    }
+  }
+
+  &__name {
+    line-height: math.div(26, 28);
+    letter-spacing: -0.035em;
+    color: #000000;
+    opacity: 0.5;
+    font-size: 14px;
+
+    @media (min-width: 767.98px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 26px;
+    }
+  }
+}

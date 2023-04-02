@@ -1,0 +1,18 @@
+.faq {
+  padding: 25px 0;
+
+  @media (min-width: 767.98px) {
+    padding: 50px 0;
+  }
+
+  @media (min-width: 1875px) {
+    padding-top: 85px;
+    padding-bottom: 75px;
+  }
+
+  &__container {
+    max-width: 1115px !important;
+  }
+
+  &__body {}
+}

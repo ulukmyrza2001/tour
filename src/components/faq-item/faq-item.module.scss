@@ -1,0 +1,115 @@
+@use "sass:math";
+
+.faq {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  //&__top {}
+
+  &_show {}
+
+  &__button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 20px 0;
+    letter-spacing: -0.035em;
+    line-height: math.div(24, 26);
+    text-align: start;
+
+    @media (min-width: 1280px) {
+      font-size: 26px;
+    }
+
+    @media (max-width: 767.98px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 767.98px) {
+      font-size: 18px;
+    }
+
+    &::before {
+      font-size: 20px;
+      transition: transform 0.4s ease 0s;
+    }
+
+    .faq_show &::before {
+      transform: rotate(45deg);
+    }
+
+    .faq_show & {
+      opacity: 0.4;
+    }
+
+    @media (min-width: 991.98px) {
+      padding: 30px 0;
+
+      &::before {
+        font-size: 30px;
+      }
+    }
+
+    @media (min-width: 1875px) {
+      padding: 40px 0;
+
+      &::before {
+        font-size: 36px;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &+div {
+      transition: height 0.4s ease 0s;
+    } 
+  }
+
+  &__hidden {
+    padding-bottom: 25px;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: -0.035em;
+    line-height: math.div(27, 20);
+    /* or 27px */
+
+    p:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 767.98px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 991.98px) {
+      padding-bottom: 30px;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    @media (min-width: 1875px) {
+      padding-bottom: 50px;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 35px;
+        }
+      }
+    }
+
+    &_collapse {}
+
+    &_content {}
+  }
+}

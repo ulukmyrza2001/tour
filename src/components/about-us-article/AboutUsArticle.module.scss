@@ -1,0 +1,144 @@
+@use "sass:math";
+
+.about {
+
+  padding: 25px 0px;
+
+  @media (min-width: 991.98px) {
+    padding: 40px 0px;
+  }
+
+  @media (min-width: 1875px) {
+    padding: 50px 0px 40px;
+  }
+
+  &__container {
+    max-width: 1115px;
+  }
+
+  &__text {
+    line-height: math.div(34, 26);
+    letter-spacing: -0.035em;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 767.98px) {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      @media (min-width: 991.98px) {
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (min-width: 1875px) {
+        &:not(:last-child) {
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-bottom: 61.5%;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    @media (min-width: 991.98px) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &:not(:last-child) {
+        margin-bottom: 45px;
+      }
+    }
+
+    @media (min-width: 1875px) {
+      &:not(:last-child) {
+        margin-bottom: 65px;
+      }
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    color: rgba(0, 0, 0, 0.4);
+    line-height: math.div(34, 26);
+    letter-spacing: -0.035em;
+
+    @media (max-width: 767.98px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 374.98px) {
+      font-size: 16px;
+    }
+  }
+
+  &__body {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    @media (min-width: 991.98px) {
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+
+    @media (min-width: 1875px) {
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__slider {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    @media (min-width: 1280px) {
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+    }
+  }
+}

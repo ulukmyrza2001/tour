@@ -1,0 +1,133 @@
+@use 'sass:math';
+
+.slide {
+	overflow: hidden;
+	&__image {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		padding-bottom: 90%;
+
+		@media (any-hover: hover) {
+			&:hover {
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
+
+		img {
+			transition: transform 0.8s ease 0s;
+
+			object-fit: cover;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		@media (min-width: 374.98px) {
+			padding-bottom: 70%;
+		}
+
+		@media (min-width: 767.98px) {
+			padding-bottom: 61%;
+		}
+
+		@media (min-width: 1280px) {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+
+		@media (min-width: 1875px) {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+
+			img {
+				transition: transform 1.2s ease 0s;
+			}
+		}
+	}
+
+	&__body {
+	}
+
+	&__title {
+		line-height: math.div(44, 42);
+		letter-spacing: -0.035em;
+		font-size: 23px;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+
+		&:not(:last-child) {
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+		}
+
+		@media (min-width: 500.98px) {
+			font-size: 25px;
+		}
+		@media (min-width: 991.98px) {
+			font-size: 27px;
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 28px;
+
+			&:not(:last-child) {
+				padding-bottom: 15px;
+				margin-bottom: 15px;
+			}
+		}
+
+		@media (min-width: 1875px) {
+			font-size: 32px;
+
+			&:not(:last-child) {
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+			}
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&__link {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		letter-spacing: -0.035em;
+		opacity: 0.5;
+		font-size: 16px;
+
+		@media (min-width: 374.98px) {
+			font-size: 20px;
+		}
+	}
+
+	&__types {
+	}
+
+	&__date {
+	}
+}

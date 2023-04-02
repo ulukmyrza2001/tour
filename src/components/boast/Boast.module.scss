@@ -1,0 +1,100 @@
+@use "sass:math";
+
+.boast {
+  padding-bottom: 30px;
+
+  &__container {
+    min-height: 100vh;
+    display: grid;
+    row-gap: 20px;
+
+    @media (min-width: 767.98px) {
+      align-content: center;
+    }
+  }
+
+  &__meta {
+    max-width: 880px;
+    margin: 0 auto;
+    position: relative;
+
+    @media (max-width: 767.98px) {
+      max-width: 260px;
+      align-self: flex-end;
+    }
+
+    @media (min-width: 1875px) {
+      max-width: 1000px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 40px;
+
+    &_top {
+      transform: rotate(5deg);
+      left: 0px;
+      top: -20px;
+
+      @media (min-width: 767.98px) {
+        top: -50px;
+      }
+    }
+
+    &_bottom {
+      transform: rotate(-5deg);
+      right: 0;
+      bottom: -20px;
+
+      @media (min-width: 767.98px) {
+        bottom: -50px;
+      }
+
+      @media (min-width: 1280px) {
+        right: -30px;
+      }
+    }
+
+    @media (min-width: 767.98px) {
+      font-size: 50px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 80px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 100px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    line-height: math.div(81, 90);
+  }
+
+  &__subtitle {
+    font-family: "VelaSans";
+    line-height: math.div(28, 26);
+    text-align: center;
+    letter-spacing: -0.035em;
+    opacity: 0.5;
+    max-width: 450px;
+    margin: 0 auto;
+    font-size: 20px;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 26px;
+    }
+
+    @media (max-width: 767.98px) {
+      align-self: flex-end;
+      max-width: 260px;
+    }
+  }
+}

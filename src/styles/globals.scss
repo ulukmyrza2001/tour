@@ -1,0 +1,70 @@
+@use "sass:math";
+
+@import "fonts";
+@import "variables";
+@import "icons";
+
+@import "./base/null";
+@import "./base/blocks";
+
+#__next {
+  height: 100%;
+  min-width: $minWidth;
+}
+
+body {
+  background-color: #fff;
+
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+[class*="container"] {
+  @if ($maxWidthContainer>0) {
+    max-width: $maxWidthContainerMin+px;
+    box-sizing: content-box;
+    margin: 0 auto;
+
+    @media (min-width: 1875px) {
+      max-width: $maxWidthContainer+px;
+    }
+  }
+
+  @if ($containerPadding>0) {
+    padding: 0 math.div($containerPadding, 2)+px;
+
+    @media (max-width: 767.98px) {
+      padding: 0 math.div($containerPaddingSmall, 2)+px;
+    }
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  >main {
+    flex: 1 1 auto;
+  }
+
+  >* {
+    min-width: 0;
+  }
+}
+
+.menu-open .Header_menu__nav__knPUA,
+.menu-open .Header_menu__nav__knPUA::after {
+  left: 0;
+}
+
+.menu-open .Header_iconMenu__hkUnY {
+
+  &::before,
+  &::after {
+    background-color: #000;
+  }
+}

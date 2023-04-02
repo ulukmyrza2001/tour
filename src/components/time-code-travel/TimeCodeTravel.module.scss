@@ -1,0 +1,19 @@
+.time {
+  padding-bottom: 25px;
+
+  @media (min-width: 767.98px) {
+    padding-bottom: 35px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: 1875px) {
+    padding-bottom: 80px;
+  }
+
+  &__container {}
+
+  &__body {}
+}

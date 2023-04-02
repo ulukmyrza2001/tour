@@ -1,0 +1,64 @@
+@use "sass:math";
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  font-family: 'VelaSans';
+  font-size: 24px;
+  line-height: math.div(26, 24);
+  text-align: center;
+  letter-spacing: -0.035em;
+  transition: background-color 0.35s ease 0s, color 0.35s ease 0s;
+
+  &.primary {
+    background-color: #fff;
+    border-radius: 35px;
+    color: #000;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #fff;
+        background-color: #000;
+      }
+    }
+
+    @media (min-width: 320px) {
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 24px;
+    }
+
+    @media (min-width: 1875px) {
+      padding: 24px 25px;
+      border-radius: 50px;
+    }
+  }
+
+  &.secondary {
+    background-color: #000;
+    color: #fff;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #000;
+        background-color: #fff;
+      }
+    }
+
+    @media (min-width: 320px) {
+      padding: 20px 16px;
+      font-size: 16px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 24px;
+    }
+
+    @media (min-width: 1875px) {
+      padding: 26px 16px;
+    }
+  }
+}

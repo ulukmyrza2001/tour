@@ -1,0 +1,54 @@
+@use "sass:math";
+
+.tours {
+  padding-bottom: 20px;
+
+  @media (min-width: 767.98px) {
+    padding-bottom: 25px;
+  }
+
+  &__container {}
+
+  &__header {
+    max-width: 1295px;
+    margin-left: auto;
+    display: grid;
+    align-items: flex-end;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    max-width: 630px;
+  }
+
+  &__description {
+    max-width: 365px;
+    text-align: end;
+    letter-spacing: -0.035em;
+    line-height: math.div(28, 24);
+    opacity: 0.4;
+
+    @media (max-width: 767.98px) {
+      display: none;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 24px;
+    }
+  }
+
+  &__body {}
+
+  &__tour {}
+}

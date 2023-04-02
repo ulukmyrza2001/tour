@@ -1,0 +1,142 @@
+@use "sass:math";
+
+.main {
+  position: relative;
+
+  &__container {
+    max-width: 600px;
+
+    @media (min-width: 1280px) {
+      max-width: 1000px;
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 1fr;
+    z-index: 1;
+    padding-top: 100px;
+    padding-bottom: 40px;
+
+    &:not(&_min) {
+      min-height: 100vh;
+    }
+
+    &_min {
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: 767.98px) {
+      padding-top: 130px + 10px;
+      padding-bottom: 33px;
+
+      &_min {
+        padding-bottom: 150px;
+      }
+    }
+
+    @media (min-width: 1875px) {
+      padding-top: 180px + 10px;
+      padding-bottom: 25px;
+
+      &_min {
+        padding-top: 220px;
+        padding-bottom: 190px;
+      }
+    }
+  }
+
+  &__meta {
+
+    video,
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    color: #fff;
+    align-self: center;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    line-height: math.div(82, 90);
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 767.98px) {
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  &__link {
+    @media (min-width: 1280px) {
+      max-width: 100%;
+      width: 250px;
+    }
+  }
+
+  &__date {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 16px;
+    border: 1.9px solid #FFFFFF;
+    overflow: hidden;
+
+    @media (min-width: 767.98px) {
+      justify-self: flex-end;
+      border-radius: 20px;
+    }
+  }
+
+  &__value {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: 'VelaSans';
+    line-height: math.div(40, 36);
+    text-align: center;
+    letter-spacing: -0.035em;
+    font-size: 20px;
+    padding: 16px 18px;
+
+    &:not(:last-child) {
+      border-right: 1.5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 767.98px) {
+      flex: 1 1 auto;
+    }
+
+    @media (min-width: 375px) {
+      font-size: 24px;
+      padding: 18px 20px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 26px;
+      padding: 18px 22px;
+    }
+
+    @media (min-width: 1875px) {
+      font-size: 36px;
+      padding: 25px 35px;
+    }
+  }
+}

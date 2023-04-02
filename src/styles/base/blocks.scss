@@ -1,0 +1,71 @@
+.title {
+  font-size: 29px;
+  line-height: math.div(98, 90);
+  letter-spacing: -0.035em;
+
+  @extend .first-letter-fonts;
+
+  @media (min-width: 767.98px) {
+    font-size: 34px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 60px;
+  }
+
+  @media (min-width: 1875px) {
+    font-size: 90px;
+  }
+}
+
+.second-title {
+  line-height: math.div(64, 60);
+  letter-spacing: -0.035em;
+  font-size: 28px;
+
+  @extend .first-letter-fonts;
+
+  @media (min-width: 374.98px) {
+    font-size: 34px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 40px;
+  }
+
+  @media (min-width: 1875px) {
+    font-size: 60px;
+  }
+}
+
+.text {
+  font-family: 'VelaSans';
+  font-style: normal;
+  line-height: math.div(55, 52);
+  letter-spacing: -0.035em;
+  color: #000;
+  font-size: 21px;
+
+  @media (min-width: 767.98px) {
+    font-size: 34px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 40px;
+  }
+
+  @media (min-width: 1875px) {
+    font-size: 52px;
+  }
+
+  span {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.first-letter-fonts {
+  &::first-letter {
+    cursor: text;
+    font-family: "DRUZHOK";
+  }
+}
