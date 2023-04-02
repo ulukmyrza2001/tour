@@ -156,7 +156,7 @@ export const Header: React.FC<IHeader> = ({ className }) => {
                 >
                   <li className={styles.menu__item}>
                     <Link
-                      href='/articles/1'
+                      href='/blog'
                       className={styles.menu__link}
                     >
                       Блог
