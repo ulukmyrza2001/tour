@@ -218,10 +218,8 @@ export const Footer: React.FC<IFooter> = ({ className }) => {
 				}}
 			>
 				<a href='https://t.me/cstmhub' className={styles.sayfox_link}>
-					&copy; Seyfox 2023 &nbsp;
-					<span className={styles.footer_comp}>
-						Все права защищены
-					</span>
+					Сайт разработали &nbsp;
+					<span className={styles.footer_comp}>Seyfox</span>
 				</a>
 			</div>
 		</footer>
